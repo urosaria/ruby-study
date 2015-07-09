@@ -2,7 +2,7 @@
 
 <% @posts.each do | post | %>
 <div class='post'>
-    <div class='title'><%= post.title %></div>
+    <div class='title'><%= post.title %> <small>( <%= post.comments.size %> )</small></div>
     <div class='content'><%= simple_format post.content %></div>
     <div>
     <%= link_to 'Show', [post.bulletin, post], class:'btn btn-default' %>
