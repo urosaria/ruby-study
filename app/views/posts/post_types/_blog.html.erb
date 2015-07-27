@@ -9,6 +9,9 @@
     <%= link_to 'Edit', edit_bulletin_post_path(post.bulletin, post), class:'btn btn-default' %>
     <%= link_to 'Destroy', [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-default' %>
     </div>
+    <% if post.tag_list.size > 0 %>
+        <div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
+    <% end %>
 </div>
 <% end %>
 

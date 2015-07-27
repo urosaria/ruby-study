@@ -11,7 +11,11 @@
                 <%= link_to fa_icon('edit'), edit_bulletin_post_path(post.bulletin, post) %>
                 <%= link_to fa_icon('trash'), [post.bulletin, post], method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
+            <% if post.tag_list.size > 0 %>
+                <div class='tag_list'><%= fa_icon('tags') + " " + tag_icons(post.tag_list) %></div>
+            <% end %>
         </div>
+
     <% end %>
 </div>
 <br>
